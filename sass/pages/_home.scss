@@ -1,0 +1,58 @@
+#Home {
+  background-color: var(--Background);
+  .navbar {
+    display: flex;
+    padding: 20px 50px;
+    justify-content: space-between;
+    align-items: center;
+    &__left {
+      display: flex;
+      height: 32px;
+      img:first-child {
+        width: 32px;
+      }
+      img:last-child {
+        width: 199.414px;
+        height: 19.8px;
+        margin: 8.6px 0px 3.6px 12px;
+      }
+    }
+    &__right {
+      display: flex;
+      column-gap: 10px;
+      align-items: center;
+      button {
+        background-color: transparent;
+        border: none;
+        display: flex;
+        height: 46px;
+        padding: 0px 20px;
+        color: #fff;
+        justify-content: center;
+        align-items: center;
+        font-family: Work Sans;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 140%;
+      }
+      div {
+        display: flex;
+        height: 60px;
+        padding: 0px 30px;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        border-radius: 20px;
+        background: var(--Call-to-Action);
+        p {
+          color: #fff;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 140%; /* 22.4px */
+        }
+      }
+    }
+  }
+}
