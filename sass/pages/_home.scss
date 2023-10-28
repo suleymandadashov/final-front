@@ -15,6 +15,12 @@
         width: 199.414px;
         height: 19.8px;
         margin: 8.6px 0px 3.6px 12px;
+        // color: var(--White);
+        // font-size: 21px;
+        // font-family: Space Mono;
+        // font-style: normal;
+        // font-weight: 700;
+        // line-height: 140%; /* 39.2px */
       }
     }
     &__right {
@@ -36,23 +42,12 @@
         font-weight: 600;
         line-height: 140%;
       }
-      div {
-        display: flex;
-        height: 60px;
-        padding: 0px 30px;
-        justify-content: center;
-        align-items: center;
-        gap: 12px;
-        border-radius: 20px;
-        background: var(--Call-to-Action);
-        p {
-          color: #fff;
-          font-size: 16px;
-          font-style: normal;
-          font-weight: 600;
-          line-height: 140%; /* 22.4px */
-        }
-      }
+      @include button(60px, 30px, 16px);
     }
+  }
+  .container {
+    padding: 80px 115px;
+  }
+  .hero {
   }
 }
