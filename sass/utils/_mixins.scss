@@ -1,25 +1,156 @@
-@mixin button($height, $padding, $font-size) {
-  a {
-    border: none;
+@mixin header-space($font-size, $line-height) {
+  color: $text;
+  font-family: "Space Mono";
+  font-size: $font-size;
+  font-style: normal;
+  font-weight: 700;
+  line-height: $line-height;
+  text-transform: capitalize;
+}
+
+@mixin text-space($font-size, $line-height) {
+  color: $text;
+  font-family: "Space Mono";
+  font-size: $font-size;
+  font-style: normal;
+  font-weight: 400;
+  line-height: $line-height;
+}
+
+@mixin header-sans($font-size, $line-height) {
+  color: $text;
+  font-family: "Work Sans";
+  font-size: $font-size;
+  font-style: normal;
+  font-weight: 600;
+  line-height: $line-height;
+  text-transform: capitalize;
+}
+
+@mixin text-sans($font-size, $line-height) {
+  color: $text;
+  font-family: "Work Sans";
+  font-size: $font-size;
+  font-style: normal;
+  font-weight: 400;
+  line-height: $line-height;
+}
+
+@mixin primary-btn-colored {
+  display: inline-flex;
+  height: 72px;
+  padding: 0px 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: $call-to-action;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  &:hover {
+    transform: scale(0.9);
     cursor: pointer;
-    display: flex;
-    height: $height;
-    padding: 0px $padding;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    border-radius: 20px;
-    background: var(--Call-to-Action);
-    p {
-      color: #fff;
-      font-size: $font-size;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 140%;
-    }
-    transition: 0.2s;
-    &:hover {
-      transform: scale(0.9);
-    }
+  }
+}
+
+@mixin secondary-btn-colored {
+  display: inline-flex;
+  height: 60px;
+  padding: 0px 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: $call-to-action;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  &:hover {
+    transform: scale(0.9);
+    cursor: pointer;
+  }
+}
+
+@mixin generic-btn-colored {
+  display: inline-flex;
+  height: 46px;
+  padding: 0px 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: $call-to-action;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  &:hover {
+    transform: scale(0.9);
+    cursor: pointer;
+  }
+}
+
+@mixin primary-btn-transparent {
+  display: inline-flex;
+  height: 72px;
+  padding: 0px 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 2px solid $call-to-action;
+  background: transparent;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  &:hover {
+    transform: scale(0.9);
+    cursor: pointer;
+  }
+}
+
+@mixin secondary-btn-transparent {
+  display: inline-flex;
+  height: 60px;
+  padding: 0px 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 2px solid $call-to-action;
+  background: transparent;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  &:hover {
+    transform: scale(0.9);
+    cursor: pointer;
+  }
+}
+
+@mixin generic-btn-transparent {
+  display: inline-flex;
+  height: 46px;
+  padding: 0px 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 2px solid $call-to-action;
+  background: transparent;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  &:hover {
+    transform: scale(0.9);
+    cursor: pointer;
+  }
+}
+
+@mixin primary-transition {
+  transition: all 0.3s ease;
+  &:hover {
+    transform: scale(0.9);
+    cursor: pointer;
   }
 }
