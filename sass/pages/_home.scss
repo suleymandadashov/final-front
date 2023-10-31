@@ -638,7 +638,7 @@
         }
       }
       &__nft-container {
-        > div:last-child {
+        > div:nth-child(3) {
           display: none;
         }
         &__nft {
@@ -688,6 +688,130 @@
         @include secondary-btn-transparent();
         p {
           @include text-sans(16px, 140%);
+        }
+      }
+    }
+  }
+
+  .NFT-info {
+    background: url(../../media/images/mushroom-1.png) lightgray 50% / cover
+      no-repeat;
+    &__gradient-container {
+      background: linear-gradient(
+        180deg,
+        rgba(162, 89, 255, 0) 0%,
+        #a259ff 100%
+      );
+      padding-top: 360px;
+      padding-bottom: 60px;
+
+      .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+      }
+    }
+
+    &__left {
+      display: flex;
+      flex-direction: column;
+      row-gap: 30px;
+      &__artist {
+        @include primary-transition();
+        width: 151px;
+        display: flex;
+        align-items: center;
+        column-gap: 12px;
+        padding: 10px 20px;
+        border-radius: 20px;
+        background-color: $background---secondary;
+        img {
+          width: 24px;
+          height: 24px;
+          border-radius: 120px;
+        }
+        p {
+          @include text-sans(16px, 140%);
+        }
+      }
+      h5 {
+        @include header-sans(51px, 110%);
+      }
+      a {
+        width: 198px;
+        @include secondary-btn-colored();
+        background-color: $text;
+        p {
+          @include header-sans(16px, 140%);
+          color: $background;
+        }
+      }
+    }
+    &__right {
+      width: 295px;
+      padding: 30px;
+      border-radius: 20px;
+      background: rgba(59, 59, 59, 0.5);
+      backdrop-filter: blur(5px);
+      p {
+        @include text-space(12px, 110%);
+      }
+      h3 {
+        @include header-space(38px, 120%);
+        margin-bottom: 5px;
+      }
+      h4 {
+        @include header-space(28px, 140%);
+        width: 18px;
+      }
+      &__timer {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    .mobile {
+      display: none;
+    }
+
+    @media (max-width: $tablet-width) {
+      &__left {
+        h5 {
+          @include header-sans(38px, 120%);
+        }
+      }
+    }
+    @media (max-width: $mobile-width) {
+      &__gradient-container {
+        padding-top: 120px;
+        padding-bottom: 40px;
+
+        .container {
+          flex-direction: column;
+          row-gap: 30px;
+          align-items: start;
+        }
+      }
+
+      &__left {
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+        a {
+          display: none;
+        }
+      }
+      &__right {
+        width: 100%;
+      }
+      .mobile {
+        display: initial;
+        width: 100%;
+        @include secondary-btn-colored();
+        background-color: $text;
+        p {
+          @include header-sans(16px, 140%);
+          color: $background;
         }
       }
     }
