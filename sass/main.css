@@ -127,10 +127,6 @@
     height: 14.85px;
     margin: 6.15px 0px 2.7px 9px;
   }
-  #Home .navbar__right button,
-  #Home .navbar__right a {
-    display: none;
-  }
   #Home .navbar__right > img {
     display: inline-block;
     width: 24px;
@@ -141,6 +137,31 @@
     -webkit-transform: scale(0.9);
             transform: scale(0.9);
     cursor: pointer;
+  }
+  #Home .navbar__right .sidebar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 30px;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: end;
+    position: fixed;
+    background-color: #3b3b3b;
+    top: 0;
+    right: -300px;
+    padding: 30px;
+    height: 100vh;
+    z-index: 300;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  #Home .navbar__right .sidebar a {
+    width: 100%;
   }
 }
 @media (max-width: 690px) {

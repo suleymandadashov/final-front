@@ -62,14 +62,27 @@
         }
       }
       &__right {
-        button,
-        a {
-          display: none;
-        }
         > img {
           display: inline-block;
           width: 24px;
           @include primary-transition();
+        }
+        .sidebar {
+          display: flex;
+          flex-direction: column;
+          row-gap: 30px;
+          align-items: end;
+          position: fixed;
+          background-color: $background---secondary;
+          top: 0;
+          right: -300px;
+          padding: 30px;
+          height: 100vh;
+          z-index: 300;
+          a {
+            width: 100%;
+          }
+          transition: all 0.3s ease;
         }
       }
     }
