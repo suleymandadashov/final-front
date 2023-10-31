@@ -1,0 +1,91 @@
+.navbar {
+  display: flex;
+  padding: 20px 50px;
+  justify-content: space-between;
+  align-items: center;
+  &__left {
+    display: flex;
+    height: 32px;
+    img:first-child {
+      width: 32px;
+    }
+    img:last-child {
+      width: 199.414px;
+      height: 19.8px;
+      margin: 8.6px 0px 3.6px 12px;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__right {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+    button {
+      background-color: transparent;
+      border: none;
+      height: 46px;
+      padding: 0px 20px;
+      @include header-sans(16px, 140%);
+      text-transform: none;
+      transition: all 0.3s ease;
+      &:hover {
+        transform: scale(0.9);
+        cursor: pointer;
+      }
+    }
+    a {
+      @include secondary-btn-colored;
+      padding: 0px 30px;
+      p {
+        @include header-sans(16px, 140%);
+      }
+    }
+    > img {
+      display: none;
+    }
+  }
+  @media (max-width: $tablet-width) {
+    padding: 15px 50px;
+    &__left {
+      height: 24px;
+      img:first-child {
+        width: 24px;
+      }
+      img:last-child {
+        width: 149.56px;
+        height: 14.85px;
+        margin: 6.15px 0px 2.7px 9px;
+      }
+    }
+    &__right {
+      > img {
+        display: inline-block;
+        width: 24px;
+        @include primary-transition();
+      }
+      .sidebar {
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+        align-items: end;
+        position: fixed;
+        background-color: $background---secondary;
+        top: 0;
+        right: -300px;
+        padding: 30px;
+        height: 100vh;
+        z-index: 300;
+        a {
+          width: 100%;
+        }
+        transition: all 0.3s ease;
+      }
+    }
+  }
+
+  @media (max-width: $mobile-width) {
+    padding: 15px 50px;
+  }
+}
