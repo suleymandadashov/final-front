@@ -855,6 +855,290 @@
     padding-bottom: 47px;
   }
 }
+#Home .discover {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+#Home .discover__mobile-btn {
+  display: none;
+}
+#Home .discover__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  margin-bottom: 60px;
+}
+#Home .discover__header__text h3 {
+  color: #fff;
+  font-family: "Work Sans";
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+#Home .discover__header__text p {
+  color: #fff;
+  font-family: "Work Sans";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+}
+#Home .discover__header a {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: 60px;
+  padding: 0px 50px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 12px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  border-radius: 20px;
+  border: 2px solid #a259ff;
+  background: transparent;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+#Home .discover__header a:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  cursor: pointer;
+}
+#Home .discover__header a p {
+  color: #fff;
+  font-family: "Work Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+}
+#Home .discover__nft-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 30px;
+     -moz-column-gap: 30px;
+          column-gap: 30px;
+}
+#Home .discover__nft-container__nft {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #3b3b3b;
+  border-radius: 20px;
+  width: 330px;
+}
+#Home .discover__nft-container__nft:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  cursor: pointer;
+}
+#Home .discover__nft-container__nft > img {
+  height: 296px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px 20px 0px 0px;
+}
+#Home .discover__nft-container__nft__text {
+  padding: 20px 30px 25px 30px;
+}
+#Home .discover__nft-container__nft__text h5 {
+  color: #fff;
+  font-family: "Work Sans";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+#Home .discover__nft-container__nft__text__artist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 12px;
+     -moz-column-gap: 12px;
+          column-gap: 12px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 25px;
+}
+#Home .discover__nft-container__nft__text__artist img {
+  width: 24px;
+  height: 24px;
+  border-radius: 120px;
+  display: inline-block;
+}
+#Home .discover__nft-container__nft__text__artist span {
+  color: #fff;
+  font-family: "Space Mono";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+}
+#Home .discover__nft-container__nft__text__details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+#Home .discover__nft-container__nft__text__details h5 {
+  color: #fff;
+  font-family: "Space Mono";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+  margin-bottom: 8px;
+  color: #858584;
+}
+#Home .discover__nft-container__nft__text__details p {
+  color: #fff;
+  font-family: "Space Mono";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+}
+#Home .discover__nft-container__nft__text__details__bid {
+  text-align: right;
+}
+@media (max-width: 1050px) {
+  #Home .discover {
+    padding-top: 40px;
+  }
+  #Home .discover__header {
+    margin-bottom: 40px;
+  }
+  #Home .discover__header__text h3 {
+    color: #fff;
+    font-family: "Work Sans";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    text-transform: capitalize;
+  }
+  #Home .discover__header__text p {
+    color: #fff;
+    font-family: "Work Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+  #Home .discover__nft-container > div:last-child {
+    display: none;
+  }
+  #Home .discover__nft-container__nft > img {
+    height: 295px;
+  }
+}
+@media (max-width: 690px) {
+  #Home .discover {
+    padding-bottom: 60px;
+  }
+  #Home .discover__header {
+    margin-bottom: 40px;
+  }
+  #Home .discover__header a {
+    display: none;
+  }
+  #Home .discover__nft-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 20px;
+  }
+  #Home .discover__nft-container__nft {
+    width: 315px;
+  }
+  #Home .discover__nft-container__nft > img {
+    height: 238px;
+  }
+  #Home .discover__nft-container__nft__text {
+    padding: 20px 20px 25px 20px;
+  }
+  #Home .discover__nft-container__nft__text__details p {
+    color: #fff;
+    font-family: "Space Mono";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+  }
+  #Home .discover__nft-container > div:last-child {
+    display: block;
+  }
+  #Home .discover__nft-container > div:last-child > img {
+    width: 315px;
+  }
+  #Home .discover__mobile-btn {
+    display: block;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    height: 60px;
+    padding: 0px 50px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 12px;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    border-radius: 20px;
+    border: 2px solid #a259ff;
+    background: transparent;
+    text-decoration: none;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+  #Home .discover__mobile-btn:hover {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    cursor: pointer;
+  }
+  #Home .discover__mobile-btn p {
+    color: #fff;
+    font-family: "Work Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+}
 #Home .how-it-works {
   padding-top: 80px;
   padding-bottom: 80px;
