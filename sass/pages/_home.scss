@@ -627,6 +627,169 @@
     }
   }
 
+  .subscribe {
+    padding-top: 40px;
+    padding-bottom: 80px;
+    .container {
+      display: flex;
+      padding: 60px;
+      column-gap: 80px;
+      border-radius: 20px;
+      background: $background---secondary;
+      justify-content: space-between;
+      align-items: center;
+      > img {
+        height: 310px;
+        width: 425px;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+    }
+    &__right {
+      width: 425px;
+      h3 {
+        @include header-sans(38px, 120%);
+        margin-bottom: 10px;
+      }
+      p {
+        @include text-sans(22px, 160%);
+        margin-bottom: 40px;
+      }
+      form {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $text;
+        border-radius: 20px;
+        input {
+          width: 182px;
+          @include text-sans(16px, 140%);
+          margin-left: 20px;
+          border: 1px solid transparent;
+          color: $background;
+          &::placeholder {
+            color: $background;
+          }
+          &:focus,
+          &:active {
+            outline: none;
+          }
+        }
+        button {
+          width: 211px;
+          img {
+            width: 20px;
+          }
+          @include secondary-btn-colored();
+          border: 1px solid transparent;
+          @include text-sans(16px, 140%);
+          &:hover {
+            transform: none;
+            width: 190px;
+          }
+        }
+      }
+    }
+    @media (max-width: $tablet-width) {
+      .container {
+        padding: 40px 30px;
+        column-gap: 30px;
+        > img {
+          height: 280px;
+          width: 300px;
+        }
+      }
+      &__right {
+        width: 300px;
+        h3 {
+          @include header-sans(28px, 140%);
+        }
+        p {
+          @include text-sans(16px, 140%);
+        }
+        form {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          row-gap: 16px;
+          background-color: transparent;
+          border-radius: 0px;
+          input {
+            height: 46px;
+            border-radius: 20px;
+            width: 100%;
+            background-color: $text;
+            padding: 16px 20px;
+            margin: 0;
+            border: 1px solid $caption-label-text;
+          }
+          button {
+            img {
+              width: 20px;
+            }
+            @include secondary-btn-colored();
+            border: 1px solid transparent;
+            @include text-sans(16px, 140%);
+            height: 46px;
+            width: 100%;
+            &:hover {
+              transform: none;
+              width: 280px;
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: $mobile-width) {
+      padding-bottom: 40px;
+      .container {
+        padding: 0;
+        flex-direction: column;
+        row-gap: 30px;
+        background-color: transparent;
+        border-radius: 0;
+        > img {
+          height: 255px;
+          width: 315px;
+        }
+      }
+      &__right {
+        width: 315px;
+        form {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          row-gap: 16px;
+          background-color: transparent;
+          border-radius: 0px;
+          input {
+            height: 46px;
+            border-radius: 20px;
+            width: 100%;
+            background-color: $text;
+            padding: 16px 20px;
+            margin: 0;
+            border: 1px solid $caption-label-text;
+          }
+          button {
+            img {
+              width: 20px;
+            }
+            @include secondary-btn-colored();
+            border: 1px solid transparent;
+            @include text-sans(16px, 140%);
+            height: 46px;
+            width: 100%;
+            &:hover {
+              transform: none;
+              width: 280px;
+            }
+          }
+        }
+      }
+    }
+  }
   .footer {
     padding-top: 40px;
     padding-bottom: 40px;
