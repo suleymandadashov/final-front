@@ -15,9 +15,9 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
     />
-    <title>Create Account</title>
+    <title>Login</title>
   </head>
-  <body id="Create-account">
+  <body id="Login">
     <section class="navbar">
       <a class="navbar__left" href="http://127.0.0.1:5500/pages/home/index.html"
         ><img src="../../media/icons/store.svg" alt="Store icon" />
@@ -29,11 +29,11 @@
           <button>Rankings</button>
           <button>Connect a wallet</button>
           <a
-            href="http://127.0.0.1:5500/pages/login/index.html"
+            href="http://127.0.0.1:5500/pages/create-account/index.html"
             class="navbar__right__sign-up-btn"
           >
             <img src="../../media/icons/user.svg" alt="User icon" />
-            <p>Log in</p>
+            <p>Sign up</p>
           </a>
         </div>
         <img
@@ -43,37 +43,26 @@
         />
       </div>
     </section>
-    <section class="create-account-section">
-      <div class="create-account-section__left"></div>
-      <div class="create-account-section__right">
-        <div class="create-account-section__right__text">
-          <h2>Create account</h2>
+    <section class="login-section">
+      <div class="login-section__left"></div>
+      <div class="login-section__right">
+        <div class="login-section__right__text">
+          <h2>Login</h2>
           <p>
-            Welcome! Enter your details and start creating, collecting and
-            selling NFTs.
+            Welcome! Enter your credentials to log in and access your account.
           </p>
         </div>
-        <form action="" class="create-account-section__right__form">
+        <form action="" class="login-section__right__form">
           <div>
             <img src="../../media/icons/user-grey.svg" alt="user icon" />
-            <input placeholder="Username" />
+            <input placeholder="Username or Email" />
           </div>
-          <div>
-            <img
-              src="../../media/icons/envelope-grey.svg"
-              alt="envelope icon"
-            />
-            <input placeholder="Email Address" />
-          </div>
+
           <div>
             <img src="../../media/icons/lock-grey.svg" alt="lock icon" />
             <input placeholder="Password" type="password" />
           </div>
-          <div>
-            <img src="../../media/icons/lock-grey.svg" alt="lock icon" />
-            <input placeholder="Confirm Password" type="password" />
-          </div>
-          <button type="submit">Create account</button>
+          <button type="submit">Login</button>
         </form>
       </div>
     </section>
