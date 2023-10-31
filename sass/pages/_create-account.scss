@@ -63,5 +63,45 @@
         }
       }
     }
+    @media (max-width: $tablet-width) {
+      column-gap: 40px;
+      &__left {
+        height: 615px;
+      }
+      &__right {
+        &__text {
+          width: 325px;
+          h2 {
+            @include header-sans(38px, 120%);
+          }
+          p {
+            @include text-sans(16px, 140%);
+          }
+        }
+        &__form {
+          width: 325px;
+        }
+      }
+    }
+    @media (max-width: $mobile-width) {
+      column-gap: 30px;
+      flex-direction: column;
+      align-items: center;
+      &__left {
+        height: 232px;
+      }
+      &__right {
+        padding-top: 30px;
+        padding-bottom: 40px;
+        row-gap: 30px;
+        width: 315px;
+        &__text {
+          width: 315px;
+        }
+        &__form {
+          width: 315px;
+        }
+      }
+    }
   }
 }
