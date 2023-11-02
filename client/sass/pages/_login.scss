@@ -1,0 +1,107 @@
+#Login {
+  background-color: $background;
+
+  .login-section {
+    display: flex;
+    column-gap: 60px;
+    align-items: center;
+    &__left {
+      height: 691px;
+      width: 100%;
+      background: url(../../../client/media/images/login.png) center/cover
+        no-repeat;
+    }
+    &__right {
+      display: flex;
+      flex-direction: column;
+      row-gap: 40px;
+      justify-content: center;
+      width: 100%;
+
+      &__text {
+        width: 460px;
+        h2 {
+          @include header-sans(51px, 110%);
+          margin-bottom: 20px;
+        }
+        p {
+          @include text-sans(22px, 160%);
+        }
+      }
+      &__form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px;
+        width: 330px;
+
+        div {
+          display: flex;
+          height: 46px;
+          padding: 16px 20px;
+          column-gap: 12px;
+          align-items: center;
+          background-color: $text;
+          border-radius: 20px;
+          border: 1px solid $caption-label-text;
+          input {
+            width: 100%;
+            @include text-sans(16px, 140%);
+            color: $background;
+            border: none;
+            &:focus,
+            &:active {
+              outline: none;
+            }
+          }
+        }
+        button {
+          margin-top: 15px;
+          @include generic-btn-colored();
+          border: none;
+          @include header-sans(16px, 140%);
+          text-transform: none;
+        }
+      }
+    }
+    @media (max-width: $tablet-width) {
+      column-gap: 40px;
+      &__left {
+        height: 615px;
+      }
+      &__right {
+        &__text {
+          width: 325px;
+          h2 {
+            @include header-sans(38px, 120%);
+          }
+          p {
+            @include text-sans(16px, 140%);
+          }
+        }
+        &__form {
+          width: 325px;
+        }
+      }
+    }
+    @media (max-width: $mobile-width) {
+      column-gap: 30px;
+      flex-direction: column;
+      align-items: center;
+      &__left {
+        height: 232px;
+      }
+      &__right {
+        padding-top: 30px;
+        padding-bottom: 40px;
+        row-gap: 30px;
+        width: 315px;
+        &__text {
+          width: 315px;
+        }
+        &__form {
+          width: 315px;
+        }
+      }
+    }
+  }
+}
