@@ -1,6 +1,139 @@
 #Artist {
   background-color: $background;
 
+  .cover {
+    background: url(../../../client/media/images/artist-page.png) lightgray 50% /
+      cover no-repeat;
+    &__gradient {
+      height: 320px;
+      background: linear-gradient(
+        180deg,
+        rgba(151, 71, 255, 0) 21.88%,
+        #9747ff 95.31%
+      );
+    }
+  }
+
+  .artist {
+    padding-top: 90px;
+    padding-bottom: 40px;
+    .container {
+      display: flex;
+      column-gap: 100px;
+    }
+    &__left {
+      position: relative;
+      width: 599px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+      h2 {
+        @include header-sans(51px, 110%);
+      }
+      &__stats {
+        display: flex;
+        column-gap: 20px;
+        div {
+          width: 156.667px;
+          h4 {
+            @include header-space(28px, 140%);
+          }
+          p {
+            @include text-space(22px, 160%);
+          }
+        }
+      }
+      &__bio {
+        h5 {
+          @include header-space(22px, 160%);
+          color: $caption-label-text;
+          margin-bottom: 10px;
+        }
+        p {
+          @include text-sans(22px, 160%);
+        }
+      }
+      &__links {
+        h5 {
+          @include header-space(22px, 160%);
+          color: $caption-label-text;
+          margin-bottom: 10px;
+        }
+        div {
+          display: flex;
+          column-gap: 10px;
+          img {
+            @include primary-transition();
+            width: 32px;
+            height: 32px;
+          }
+        }
+      }
+      > img {
+        position: absolute;
+        left: 0;
+        top: -160px;
+        width: 120px;
+        height: 120px;
+        border-radius: 20px;
+        border: 2px solid var(--Background, #2b2b2b);
+      }
+    }
+    &__right {
+      display: flex;
+      column-gap: 20px;
+      &__copy-btn {
+        width: 186px;
+        @include secondary-btn-colored();
+        p {
+          width: 113px;
+        }
+      }
+      &__follow-btn {
+        @include secondary-btn-transparent();
+      }
+      p {
+        @include header-sans(16px, 140%);
+      }
+    }
+  }
+  .tabs {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    &__line {
+      width: 100%;
+      height: 1px;
+      background-color: $background---secondary;
+    }
+    .container {
+      display: flex;
+      justify-content: space-between;
+      > div {
+        height: 60px;
+        width: 350px;
+        display: flex;
+        column-gap: 16px;
+        align-items: center;
+        padding: 0px 30px;
+        justify-content: center;
+        h5 {
+          @include header-sans(22px, 140%);
+        }
+        div {
+          display: flex;
+          padding: 5px 10px;
+          align-items: center;
+          border-radius: 20px;
+          background: $caption-label-text;
+          @include text-space(16px, 140%);
+        }
+      }
+      div:first-child {
+        border-bottom: 2px solid $caption-label-text;
+      }
+    }
+  }
   .nft-cards {
     background-color: $background---secondary;
     padding-top: 80px;
@@ -90,5 +223,9 @@
         }
       }
     }
+  }
+
+  .footer {
+    border-top: 2px solid $background !important;
   }
 }
