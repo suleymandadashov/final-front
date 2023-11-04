@@ -38,7 +38,6 @@ btnClick(createdBtn);
 const API_BASE_URL = "http://localhost:3000/api/creators";
 let searchParams = new URLSearchParams(window.location.search);
 let artistId = searchParams.get("artist_id");
-console.log(artistId);
 
 function getData() {
   // loadingElement.style.display = "flex";
@@ -139,11 +138,12 @@ const followBtn = document.querySelector(".artist__right__follow-btn");
 const followBtnText = document.querySelector(".artist__right__follow-btn p");
 const followBtnImg = document.querySelector(".artist__right__follow-btn img");
 
-const isFollowed = localStorage.getItem(`followed_${artistId}`) === "true";
+const isFollowed =
+  JSON.parse(localStorage.getItem(`followed_${artistId}`)) || false;
 updateButtonColor(isFollowed);
 
 followBtn.addEventListener("click", () => {
-  const isFollowed = !localStorage.getItem(`followed_${artistId}`);
+  const isFollowed = !JSON.parse(localStorage.getItem(`followed_${artistId}`));
   localStorage.setItem(`followed_${artistId}`, isFollowed);
   updateButtonColor(isFollowed);
 });
