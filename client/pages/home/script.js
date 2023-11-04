@@ -1,6 +1,6 @@
 //For Timer
-//November 5, 2023, at 00:00:00
-var date = new Date(Date.UTC(2023, 10, 5, 0, 0, 0));
+//November 8, 2023, at 00:00:00
+var date = new Date(Date.UTC(2023, 10, 8, 0, 0, 0));
 date.setHours(date.getHours() - 4); //GMT+4
 
 function updateTimer() {
@@ -26,3 +26,61 @@ function updateTimer() {
 }
 
 setInterval(updateTimer, 1000);
+
+artists = [];
+const artistsContainer = document.querySelector(".top-artists__artists");
+const loadingElement = document.querySelector(".loader");
+loadingElement.style.display = "none";
+
+function getData() {
+  loadingElement.style.display = "flex";
+  fetch("http://localhost:3000/api/creators")
+    .then((res) => res.json())
+    .then((data) => {
+      artists = data;
+      artists.forEach((artist) => {
+        createArtistBox(artist, artistsContainer);
+      });
+    })
+    .finally(() => {
+      loadingElement.style.display = "none";
+    });
+}
+
+getData();
+
+function createArtistBox(artist, artistsContainer) {
+  const artistContainer = document.createElement("div");
+  artistContainer.classList.add("top-artists__artists__artist");
+
+  const topPart = document.createElement("div");
+  topPart.classList.add("top-artists__artists__artist__top");
+
+  const artistId = document.createElement("div");
+  artistId.textContent = artist.id;
+
+  const artistAvatar = document.createElement("img");
+  artistAvatar.src = `../../../${artist.profileImgPath}`;
+  artistAvatar.alt = artist.name;
+
+  topPart.appendChild(artistId);
+  topPart.appendChild(artistAvatar);
+
+  const bottomPart = document.createElement("div");
+  bottomPart.classList.add("top-artists__artists__artist__bottom");
+
+  const artistName = document.createElement("h5");
+  artistName.textContent = artist.name;
+
+  const totalSales = document.createElement("div");
+  totalSales.innerHTML = `<p>Total Sales:</p>
+    <p class="top-artists__artists__artist__bottom__sales">${artist.totalSale.value} ${artist.totalSale.currency}</p>`;
+
+  bottomPart.appendChild(artistName);
+  bottomPart.appendChild(totalSales);
+
+  artistContainer.appendChild(topPart);
+  artistContainer.appendChild(bottomPart);
+
+  artistsContainer.appendChild(artistContainer);
+}

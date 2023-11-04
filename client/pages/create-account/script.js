@@ -89,12 +89,12 @@ form.addEventListener("submit", function (event) {
       .then((response) => {
         if (response.status === 200) {
           Toastify({
-            text: `Account created successfully! Welcome, ${newUsername}`,
+            text: `Account created successfully! Welcome, ${newUsername}!`,
             duration: 3000,
             gravity: "top",
             position: "right",
             style: {
-              background: "linear-gradient(to right, #00FF00, #33FF57)",
+              background: "linear-gradient(to right, #009900, #229933)",
             },
           }).showToast();
           username.value = "";

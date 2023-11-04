@@ -31,7 +31,6 @@
       &__form {
         display: flex;
         flex-direction: column;
-        row-gap: 15px;
         width: 330px;
 
         div {
@@ -55,11 +54,18 @@
           }
         }
         button {
-          margin-top: 15px;
+          margin-top: 20px;
           @include generic-btn-colored();
           border: none;
           @include header-sans(16px, 140%);
           text-transform: none;
+        }
+        .error-message {
+          height: 20px;
+          margin-bottom: 10px;
+          margin-top: 5px;
+          margin-left: 16px;
+          color: #ff0000;
         }
       }
     }

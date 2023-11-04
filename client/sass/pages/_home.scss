@@ -322,7 +322,29 @@
   .top-artists {
     padding-top: 80px;
     padding-bottom: 80px;
+
+    &__mobile-btn {
+      width: 100%;
+      margin-top: 40px;
+      @include secondary-btn-transparent();
+      p {
+        @include text-sans(16px, 140%);
+      }
+      display: none;
+    }
+
+    @media (max-width: $tablet-width) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    @media (max-width: $mobile-width) {
+      &__mobile-btn {
+        display: flex;
+      }
+    }
+
     &__header {
+      margin-bottom: 60px;
       display: flex;
       column-gap: 100px;
       align-items: flex-end;
@@ -340,6 +362,247 @@
         @include secondary-btn-transparent();
         p {
           @include text-sans(16px, 140%);
+        }
+      }
+      @media (max-width: $tablet-width) {
+        margin-bottom: 40px;
+        &__text {
+          width: 343px;
+          h3 {
+            @include header-sans(28px, 140%);
+          }
+          p {
+            @include text-sans(16px, 140%);
+          }
+        }
+      }
+      @media (max-width: $mobile-width) {
+        &__text {
+          width: 100%;
+        }
+        a {
+          display: none;
+        }
+      }
+    }
+
+    .loader {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 774px;
+      .glitch {
+        position: relative;
+        font-size: 80px;
+        font-weight: 700;
+        line-height: 1.2;
+        color: #fff;
+        letter-spacing: 5px;
+        z-index: 1;
+        animation: shift 1s ease-in-out infinite alternate;
+      }
+      @media (max-width: $tablet-width) {
+        height: 360px;
+        .glitch {
+          font-size: 60px;
+        }
+      }
+      @media (max-width: $mobile-width) {
+        height: 580px;
+        .glitch {
+          font-size: 40px;
+        }
+      }
+      .glitch:before,
+      .glitch:after {
+        display: block;
+        content: attr(data-glitch);
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.8;
+      }
+
+      .glitch:before {
+        animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both
+          infinite;
+        color: #8b00ff;
+        z-index: -1;
+      }
+
+      .glitch:after {
+        animation: glitch 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both
+          infinite;
+        color: #00e571;
+        z-index: -2;
+      }
+
+      @keyframes glitch {
+        0% {
+          transform: translate(0);
+        }
+
+        20% {
+          transform: translate(-3px, 3px);
+        }
+
+        40% {
+          transform: translate(-3px, -3px);
+        }
+
+        60% {
+          transform: translate(3px, 3px);
+        }
+
+        80% {
+          transform: translate(3px, -3px);
+        }
+
+        to {
+          transform: translate(0);
+        }
+      }
+
+      @keyframes shift {
+        0%,
+        40%,
+        44%,
+        58%,
+        61%,
+        65%,
+        69%,
+        73%,
+        100% {
+          transform: skewX(0deg);
+        }
+
+        41% {
+          transform: skewX(10deg);
+        }
+
+        42% {
+          transform: skewX(-10deg);
+        }
+
+        59% {
+          transform: skewX(40deg) skewY(10deg);
+        }
+
+        60% {
+          transform: skewX(-40deg) skewY(-10deg);
+        }
+
+        63% {
+          transform: skewX(10deg) skewY(-5deg);
+        }
+
+        70% {
+          transform: skewX(-50deg) skewY(-20deg);
+        }
+
+        71% {
+          transform: skewX(10deg) skewY(-10deg);
+        }
+      }
+    }
+
+    &__artists {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(4, 1fr);
+      &__artist {
+        @include primary-transition();
+        width: 240px;
+        padding: 20px;
+        border-radius: 20px;
+        background: $background---secondary;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        position: relative;
+        &__top {
+          display: flex;
+          justify-content: center;
+          div {
+            width: 30px;
+            height: 30px;
+            border-radius: 20px;
+            background: $background;
+            position: absolute;
+            left: 20px;
+            top: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include text-space(16px, 140%);
+            color: $caption-label-text;
+          }
+          img {
+            width: 120px;
+            height: 120px;
+            border-radius: 100px;
+          }
+        }
+        &__bottom {
+          h5 {
+            text-align: center;
+            @include header-sans(22px, 140%);
+            margin-bottom: 5px;
+          }
+          div {
+            display: flex;
+            column-gap: 10px;
+            p:first-child {
+              @include text-sans(16px, 140%);
+              text-align: right;
+              color: $caption-label-text;
+            }
+          }
+          &__sales {
+            @include text-space(16px, 140%);
+            text-align: left;
+          }
+        }
+      }
+      @media (max-width: $tablet-width) {
+        //at tablet and mobile versions, only top 6 are shown:
+        &__artist:nth-child(n + 7) {
+          display: none;
+        }
+        grid-template-columns: repeat(2, 1fr);
+        &__artist {
+          width: 330px;
+          flex-direction: row;
+          column-gap: 20px;
+          &__top {
+            div {
+              left: 12px;
+              top: 13px;
+            }
+            img {
+              width: 60px;
+              height: 60px;
+            }
+          }
+          &__bottom {
+            h5 {
+              text-align: left;
+            }
+            div {
+              display: flex;
+              column-gap: 5px;
+              p:first-child {
+                text-align: left;
+              }
+            }
+          }
+        }
+      }
+      @media (max-width: $mobile-width) {
+        gap: 20px;
+        grid-template-columns: 1fr;
+        &__artist {
+          width: 100%;
         }
       }
     }

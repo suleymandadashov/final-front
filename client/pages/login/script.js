@@ -1,58 +1,70 @@
-//For Subscription
-const emailRegex = /^[\w\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+const form = document.getElementById("login-form");
 
-//We have 2 same forms in home page:
-const emailForms = document.querySelectorAll(".emailForm");
-const emailInputs = document.querySelectorAll(".emailInput");
+form.addEventListener("submit", function (event) {
+  let valid = true;
+  event.preventDefault();
 
-emailForms.forEach((emailForm, index) => {
-  emailForm.addEventListener("submit", function (e) {
-    e.preventDefault();
+  const username = document.getElementById("username");
+  const password = document.getElementById("password");
 
-    const email = emailInputs[index].value;
+  if (username.value.trim() == "") {
+    valid = false;
+    document.querySelector(".username.error-message").textContent =
+      "*Required field";
+  } else {
+    document.querySelector(".username.error-message").textContent = "";
+  }
 
-    if (emailInputs[index].value === "") {
-      Toastify({
-        text: "Please enter your email address to subscribe.",
-        duration: 3000,
-        destination: "https://github.com/apvarun/toastify-js",
-        newWindow: true,
-        close: true,
-        gravity: "top",
-        position: "right",
-        style: {
-          background: "linear-gradient(to right, #FFD700, #FFB90F)",
-        },
-      }).showToast();
-    } else {
-      if (emailRegex.test(email)) {
-        Toastify({
-          text: "Subscription successful! Watch your inbox for updates.",
-          duration: 3000,
-          destination: "https://github.com/apvarun/toastify-js",
-          newWindow: true,
-          close: true,
-          gravity: "top",
-          position: "right",
-          style: {
-            background: "linear-gradient(to right, #00b09b, #96c93d)",
-          },
-        }).showToast();
-        emailInputs[index].value = "";
-      } else {
-        Toastify({
-          text: "Email is not valid!",
-          duration: 3000,
-          destination: "https://github.com/apvarun/toastify-js",
-          newWindow: true,
-          close: true,
-          gravity: "top",
-          position: "right",
-          style: {
-            background: "linear-gradient(to right, #FF0000, #FF5733)",
-          },
-        }).showToast();
-      }
-    }
-  });
+  if (password.value == "") {
+    valid = false;
+    document.querySelector(".password.error-message").textContent =
+      "*Required field";
+  } else {
+    document.querySelector(".password.error-message").textContent = "";
+  }
+
+  if (valid) {
+    newUsername = username.value;
+    fetch("http://localhost:3000/api/login", {
+      method: "POST",
+      headers: {
+        "CONTENT-TYPE": "application/json",
+      },
+      body: JSON.stringify({
+        username: username.value,
+        password: password.value,
+      }),
+    })
+      .then((response) => {
+        if (response.status === 200) {
+          Toastify({
+            text: `Login successful! Welcome back, ${newUsername}!`,
+            duration: 3000,
+            gravity: "top",
+            position: "right",
+            style: {
+              background: "linear-gradient(to right, #009900, #229933)",
+            },
+          }).showToast();
+          username.value = "";
+          password.value = "";
+        } else if (response.status === 400) {
+          return response.json();
+        }
+      })
+      .then((data) => {
+        //if status=200, then data=undefined.
+        if (data) {
+          Toastify({
+            text: data.error,
+            duration: 3000,
+            gravity: "top",
+            position: "right",
+            style: {
+              background: "linear-gradient(to right, #FF0000, #FF5733)",
+            },
+          }).showToast();
+        }
+      });
+  }
 });
