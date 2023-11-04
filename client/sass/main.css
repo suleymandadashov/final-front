@@ -3190,6 +3190,7 @@
           column-gap: 20px;
 }
 #Artist .artist__right__copy-btn {
+  border: none;
   width: 186px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;

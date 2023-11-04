@@ -96,6 +96,7 @@
       display: flex;
       column-gap: 20px;
       &__copy-btn {
+        border: none;
         width: 186px;
         @include secondary-btn-colored();
         p {

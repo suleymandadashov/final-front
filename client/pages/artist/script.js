@@ -79,6 +79,30 @@ function fillArtistPage(artist) {
     button.textContent = shortenedChainId;
   });
 
+  //Copying to the clipboard
+  document
+    .querySelector(".artist__right__copy-btn")
+    .addEventListener("click", () => {
+      const textarea = document.createElement("textarea");
+      textarea.value = artist.chainId;
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+      Toastify({
+        text: "Chain ID copied to clipboard!",
+        duration: 3000,
+        newWindow: true,
+        close: false,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+      }).showToast();
+    });
+
   //NFT Cards
   nftCount = artist.nfts.length;
   document.querySelector("#created-button div").innerHTML = nftCount;
