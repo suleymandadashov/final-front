@@ -3083,9 +3083,6 @@
           flex-direction: column;
   row-gap: 30px;
 }
-#Artist .artist__left > .artist__right {
-  display: none;
-}
 #Artist .artist__left h2 {
   color: #fff;
   font-family: "Work Sans";
@@ -3258,13 +3255,36 @@
   line-height: 140%;
   text-transform: capitalize;
 }
+#Artist .artist__right .following {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: 60px;
+  padding: 0px 50px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 12px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  border-radius: 20px;
+  background: #a259ff;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+#Artist .artist__right .following:hover {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  cursor: pointer;
+}
 @media (max-width: 1050px) {
   #Artist .artist {
     padding-top: 80px;
     padding-bottom: 30px;
-  }
-  #Artist .artist .container > .artist__right {
-    display: none;
   }
   #Artist .artist__left {
     width: 100%;
@@ -3277,11 +3297,6 @@
     font-weight: 600;
     line-height: 120%;
     text-transform: capitalize;
-  }
-  #Artist .artist__left > .artist__right {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
   }
   #Artist .artist__left__stats div {
     width: 156.667px;

@@ -32,9 +32,6 @@
       column-gap: 100px;
     }
     &__left {
-      > .artist__right {
-        display: none;
-      }
       position: relative;
       width: 599px;
       display: flex;
@@ -111,22 +108,20 @@
       p {
         @include header-sans(16px, 140%);
       }
+      .following {
+        @include secondary-btn-colored();
+      }
     }
     @media (max-width: $tablet-width) {
       padding-top: 80px;
       padding-bottom: 30px;
 
-      .container > .artist__right {
-        display: none;
-      }
       &__left {
         width: 100%;
         h2 {
           @include header-sans(38px, 120%);
         }
-        > .artist__right {
-          display: flex;
-        }
+
         &__stats {
           div {
             width: 156.667px;

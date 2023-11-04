@@ -133,3 +133,47 @@ function formatNumberInThousands(numberStr) {
   }
   return numberStr;
 }
+
+//Follow btn using local storage
+const followBtn = document.querySelector(".artist__right__follow-btn");
+const followBtnText = document.querySelector(".artist__right__follow-btn p");
+const followBtnImg = document.querySelector(".artist__right__follow-btn img");
+
+const isFollowed = localStorage.getItem(`followed_${artistId}`) === "true";
+updateButtonColor(isFollowed);
+
+followBtn.addEventListener("click", () => {
+  const isFollowed = !localStorage.getItem(`followed_${artistId}`);
+  localStorage.setItem(`followed_${artistId}`, isFollowed);
+  updateButtonColor(isFollowed);
+});
+
+function updateButtonColor(isFollowed) {
+  if (isFollowed) {
+    followBtn.classList.add("following");
+    followBtnText.textContent = "Following";
+    followBtnImg.src = "../../media/icons/check.svg";
+  } else {
+    followBtn.classList.remove("following");
+    followBtnText.textContent = "Follow";
+    followBtnImg.src = "../../media/icons/plus.svg";
+  }
+}
+
+//To change the directory of 2 buttons in desktok and tablet/mobile modes:
+const artistLeftContainer = document.querySelector(".artist__left");
+const artistRightContainer = document.querySelector(".artist__right");
+const artistContainer = document.querySelector(".artist .container");
+const artistStats = document.querySelector(".artist__left__stats");
+
+function changeElementOrder() {
+  const screenWidth = window.outerWidth;
+  if (screenWidth >= 1050) {
+    artistContainer.appendChild(artistRightContainer);
+  } else {
+    artistLeftContainer.insertBefore(artistRightContainer, artistStats);
+  }
+}
+
+changeElementOrder();
+window.addEventListener("resize", changeElementOrder);
