@@ -27,19 +27,30 @@ function updateTimer() {
 
 setInterval(updateTimer, 1000);
 
-artists = [];
+//API part:
+
+const API_BASE_URL = "http://localhost:3000/api/creators";
 const artistsContainer = document.querySelector(".top-artists__artists");
 const loadingElement = document.querySelector(".loader");
 loadingElement.style.display = "none";
 
 function getData() {
   loadingElement.style.display = "flex";
-  fetch("http://localhost:3000/api/creators")
+  fetch(API_BASE_URL)
     .then((res) => res.json())
     .then((data) => {
-      artists = data;
+      let artists = data;
       artists.forEach((artist) => {
         createArtistBox(artist, artistsContainer);
+        newArtist = document.querySelectorAll(".top-artists__artists__artist")[
+          artist.id - 1
+        ];
+        newArtist.addEventListener("click", () => {
+          window.open(
+            `http://127.0.0.1:5500/client/pages/artist/index.html?artist_id=${artist.id}`,
+            "_self"
+          );
+        });
       });
     })
     .finally(() => {

@@ -3575,6 +3575,19 @@
 #Artist .nft-cards__card__text__details__bid {
   text-align: right;
 }
+#Artist .nft-cards__empty {
+  display: none;
+}
+#Artist .nft-cards__empty h2 {
+  text-align: center;
+  color: #fff;
+  font-family: "Space Mono";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  color: #858584;
+}
 @media (max-width: 1050px) {
   #Artist .nft-cards .container {
     grid-template-columns: repeat(2, 1fr);

@@ -309,6 +309,14 @@
         }
       }
     }
+    &__empty {
+      display: none;
+      h2 {
+        text-align: center;
+        @include text-space(30px, 120%);
+        color: $caption-label-text;
+      }
+    }
 
     @media (max-width: $tablet-width) {
       .container {

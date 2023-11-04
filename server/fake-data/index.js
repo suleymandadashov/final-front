@@ -182,7 +182,7 @@ const nfts = [
       currency: "wETH",
     },
     name: "Distant Galaxy",
-    imgPath: "images/nfts/1.png",
+    imgPath: "images/nfts/nft-1.png",
   },
   {
     id: 2,
@@ -196,7 +196,7 @@ const nfts = [
       currency: "wETH",
     },
     name: "Life On Edena",
-    imgPath: "images/nfts/2.png",
+    imgPath: "images/nfts/nft-2.png",
   },
   {
     id: 3,
@@ -210,7 +210,7 @@ const nfts = [
       currency: "wETH",
     },
     name: "AstroFiction",
-    imgPath: "images/nfts/3.png",
+    imgPath: "images/nfts/nft-3.png",
   },
   {
     id: 4,
@@ -224,7 +224,7 @@ const nfts = [
       currency: "wETH",
     },
     name: "CryptoCity",
-    imgPath: "images/nfts/4.png",
+    imgPath: "images/nfts/nft-4.png",
   },
   {
     id: 5,
@@ -238,7 +238,7 @@ const nfts = [
       currency: "wETH",
     },
     name: "ColorfulDog 0524",
-    imgPath: "images/nfts/5.png",
+    imgPath: "images/nfts/nft-5.png",
   },
   {
     id: 6,
@@ -252,7 +252,7 @@ const nfts = [
       currency: "wETH",
     },
     name: "Space Tales",
-    imgPath: "images/nfts/6.png",
+    imgPath: "images/nfts/nft-6.png",
   },
   {
     id: 7,
@@ -266,7 +266,7 @@ const nfts = [
       currency: "wETH",
     },
     name: "Cherry Blossom Girl 037",
-    imgPath: "images/nfts/7.png",
+    imgPath: "images/nfts/nft-7.png",
   },
   {
     id: 8,
@@ -280,7 +280,7 @@ const nfts = [
       currency: "wETH",
     },
     name: "Dancing Robots 0987",
-    imgPath: "images/nfts/8.png",
+    imgPath: "images/nfts/nft-8.png",
   },
   {
     id: 9,
@@ -294,7 +294,7 @@ const nfts = [
       currency: "wETH",
     },
     name: "IceCream Ape ",
-    imgPath: "images/nfts/9.png",
+    imgPath: "images/nfts/nft-9.png",
   },
   {
     id: 10,
@@ -308,7 +308,7 @@ const nfts = [
       currency: "wETH",
     },
     name: "Foxy Life",
-    imgPath: "images/nfts/10.png",
+    imgPath: "images/nfts/nft-10.png",
   },
   {
     id: 11,
@@ -322,7 +322,7 @@ const nfts = [
       currency: "wETH",
     },
     name: "Cat from future",
-    imgPath: "images/nfts/11.png",
+    imgPath: "images/nfts/nft-11.png",
   },
   {
     id: 12,
@@ -336,7 +336,7 @@ const nfts = [
       currency: "wETH",
     },
     name: "Psycho Dog",
-    imgPath: "images/nfts/12.png",
+    imgPath: "images/nfts/nft-12.png",
   },
   {
     id: 13,
@@ -350,7 +350,7 @@ const nfts = [
       currency: "wETH",
     },
     name: "Designer Bear",
-    imgPath: "images/nfts/13.png",
+    imgPath: "images/nfts/nft-13.png",
   },
   {
     id: 14,
@@ -364,7 +364,7 @@ const nfts = [
       currency: "wETH",
     },
     name: "Dancing Robot 0375",
-    imgPath: "images/nfts/14.png",
+    imgPath: "images/nfts/nft-14.png",
   },
   {
     id: 15,
@@ -378,7 +378,7 @@ const nfts = [
       currency: "wETH",
     },
     name: "Dancing Robot 0356",
-    imgPath: "images/nfts/15.png",
+    imgPath: "images/nfts/nft-15.png",
   },
   {
     id: 16,
@@ -392,7 +392,7 @@ const nfts = [
       currency: "wETH",
     },
     name: "Dancing Robot 0321",
-    imgPath: "images/nfts/16.png",
+    imgPath: "images/nfts/nft-16.png",
   },
   {
     id: 17,
@@ -406,7 +406,7 @@ const nfts = [
       currency: "wETH",
     },
     name: "Dancing Robot 0512",
-    imgPath: "images/nfts/17.png",
+    imgPath: "images/nfts/nft-17.png",
   },
   {
     id: 18,
@@ -420,7 +420,7 @@ const nfts = [
       currency: "wETH",
     },
     name: "Dancing Robot 0024",
-    imgPath: "images/nfts/18.png",
+    imgPath: "images/nfts/nft-18.png",
   },
 ];
 
