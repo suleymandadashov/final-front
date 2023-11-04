@@ -3049,6 +3049,16 @@
   background: -webkit-gradient(linear, left top, left bottom, color-stop(21.88%, rgba(151, 71, 255, 0)), color-stop(95.31%, #9747ff));
   background: linear-gradient(180deg, rgba(151, 71, 255, 0) 21.88%, #9747ff 95.31%);
 }
+@media (max-width: 1050px) {
+  #Artist .cover__gradient {
+    height: 280px;
+  }
+}
+@media (max-width: 690px) {
+  #Artist .cover__gradient {
+    height: 250px;
+  }
+}
 #Artist .artist {
   padding-top: 90px;
   padding-bottom: 40px;
@@ -3071,7 +3081,10 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 20px;
+  row-gap: 30px;
+}
+#Artist .artist__left > .artist__right {
+  display: none;
 }
 #Artist .artist__left h2 {
   color: #fff;
@@ -3081,6 +3094,9 @@
   font-weight: 600;
   line-height: 110%;
   text-transform: capitalize;
+}
+#Artist .artist__left__mobile-btns {
+  display: none;
 }
 #Artist .artist__left__stats {
   display: -webkit-box;
@@ -3242,6 +3258,117 @@
   line-height: 140%;
   text-transform: capitalize;
 }
+@media (max-width: 1050px) {
+  #Artist .artist {
+    padding-top: 80px;
+    padding-bottom: 30px;
+  }
+  #Artist .artist .container > .artist__right {
+    display: none;
+  }
+  #Artist .artist__left {
+    width: 100%;
+  }
+  #Artist .artist__left h2 {
+    color: #fff;
+    font-family: "Work Sans";
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    text-transform: capitalize;
+  }
+  #Artist .artist__left > .artist__right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #Artist .artist__left__stats div {
+    width: 156.667px;
+  }
+  #Artist .artist__left__stats div h4 {
+    color: #fff;
+    font-family: "Space Mono";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 160%;
+    text-transform: capitalize;
+  }
+  #Artist .artist__left__stats div p {
+    color: #fff;
+    font-family: "Space Mono";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+  #Artist .artist__left__bio h5 {
+    color: #fff;
+    font-family: "Space Mono";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    text-transform: capitalize;
+  }
+  #Artist .artist__left__bio p {
+    color: #fff;
+    font-family: "Work Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+  #Artist .artist__left__links h5 {
+    color: #fff;
+    font-family: "Space Mono";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    text-transform: capitalize;
+  }
+  #Artist .artist__left__links div img {
+    width: 24px;
+    height: 24px;
+  }
+  #Artist .artist__left > img {
+    top: -150px;
+  }
+}
+@media (max-width: 690px) {
+  #Artist .artist__left h2 {
+    color: #fff;
+    font-family: "Work Sans";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    text-transform: capitalize;
+  }
+  #Artist .artist__left > .artist__right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 20px;
+  }
+  #Artist .artist__left > .artist__right a {
+    width: 100%;
+  }
+  #Artist .artist__left__stats div {
+    width: 91.6666px;
+  }
+  #Artist .artist__left > img {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
 #Artist .tabs {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3265,7 +3392,12 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-#Artist .tabs .container > div {
+#Artist .tabs .container > button {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
   height: 60px;
   width: 350px;
   display: -webkit-box;
@@ -3282,7 +3414,7 @@
       -ms-flex-pack: center;
           justify-content: center;
 }
-#Artist .tabs .container > div h5 {
+#Artist .tabs .container > button h5 {
   color: #fff;
   font-family: "Work Sans";
   font-size: 22px;
@@ -3290,8 +3422,9 @@
   font-weight: 600;
   line-height: 140%;
   text-transform: capitalize;
+  color: #858584;
 }
-#Artist .tabs .container > div div {
+#Artist .tabs .container > button div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3300,7 +3433,7 @@
       -ms-flex-align: center;
           align-items: center;
   border-radius: 20px;
-  background: #858584;
+  background: #3b3b3b;
   color: #fff;
   font-family: "Space Mono";
   font-size: 16px;
@@ -3308,8 +3441,36 @@
   font-weight: 400;
   line-height: 140%;
 }
-#Artist .tabs .container div:first-child {
-  border-bottom: 2px solid #858584;
+@media (max-width: 1050px) {
+  #Artist .tabs .container > button {
+    width: 100%;
+  }
+  #Artist .tabs .container > button h5 {
+    color: #fff;
+    font-family: "Work Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    text-transform: capitalize;
+  }
+  #Artist .tabs .container > button div {
+    color: #fff;
+    font-family: "Space Mono";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+  }
+}
+@media (max-width: 690px) {
+  #Artist .tabs .container > button {
+    padding: 0px 10px;
+    width: 100%;
+  }
+  #Artist .tabs .container > button div {
+    display: none;
+  }
 }
 #Artist .nft-cards {
   background-color: #3b3b3b;
@@ -3443,6 +3604,15 @@
     font-weight: 400;
     line-height: 110%;
   }
+}
+#Artist .clicked-on {
+  border-bottom: 2px solid #858584 !important;
+}
+#Artist .clicked-on h5 {
+  color: #fff !important;
+}
+#Artist .clicked-on div {
+  background: #858584 !important;
 }
 #Artist .footer {
   border-top: 2px solid #2b2b2b !important;
