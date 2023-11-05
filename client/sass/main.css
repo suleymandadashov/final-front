@@ -4402,7 +4402,7 @@
   background-color: transparent;
   border: none;
   height: 60px;
-  width: 350px;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4634,5 +4634,166 @@
   background: #858584 !important;
 }
 #Artist .footer {
+  border-top: 2px solid #2b2b2b !important;
+}
+
+#Marketplace {
+  background-color: #2b2b2b;
+}
+#Marketplace .search {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+#Marketplace .search .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 30px;
+}
+#Marketplace .search__header h2 {
+  color: #fff;
+  font-family: "Work Sans";
+  font-size: 51px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+#Marketplace .search__header p {
+  color: #fff;
+  font-family: "Work Sans";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+}
+#Marketplace .search__input-container {
+  padding: 12px 20px;
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid #3b3b3b;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+#Marketplace .search__input-container input {
+  width: 100%;
+}
+#Marketplace .tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 10px;
+}
+#Marketplace .tabs__line {
+  width: 100%;
+  height: 1px;
+  background-color: #3b3b3b;
+}
+#Marketplace .tabs .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+#Marketplace .tabs .container > button {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  height: 60px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 16px;
+     -moz-column-gap: 16px;
+          column-gap: 16px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+#Marketplace .tabs .container > button h5 {
+  color: #fff;
+  font-family: "Work Sans";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  text-transform: capitalize;
+  color: #858584;
+}
+#Marketplace .tabs .container > button div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 20px;
+  background: #3b3b3b;
+  color: #fff;
+  font-family: "Space Mono";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+}
+@media screen and (max-width: 1050px) {
+  #Marketplace .tabs .container > button {
+    width: 100%;
+  }
+  #Marketplace .tabs .container > button h5 {
+    color: #fff;
+    font-family: "Work Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    text-transform: capitalize;
+  }
+  #Marketplace .tabs .container > button div {
+    color: #fff;
+    font-family: "Space Mono";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+  }
+}
+@media screen and (max-width: 690px) {
+  #Marketplace .tabs .container > button {
+    padding: 0px 10px;
+    width: 100%;
+  }
+  #Marketplace .tabs .container > button div {
+    display: none;
+  }
+}
+#Marketplace .footer {
   border-top: 2px solid #2b2b2b !important;
 }

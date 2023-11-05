@@ -1,0 +1,102 @@
+#Marketplace {
+  background-color: $background;
+
+  .search {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    .container {
+      display: flex;
+      flex-direction: column;
+      row-gap: 30px;
+    }
+    &__header {
+      h2 {
+        @include header-sans(51px, 110%);
+        margin-bottom: 10px;
+      }
+      p {
+        @include text-sans(22px, 160%);
+      }
+    }
+    &__input-container {
+      padding: 12px 20px;
+      width: 100%;
+      border-radius: 20px;
+      border: 1px solid $background---secondary;
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      input {
+        width: 100%;
+      }
+    }
+  }
+
+  .tabs {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    &__line {
+      width: 100%;
+      height: 1px;
+      background-color: $background---secondary;
+    }
+    .container {
+      display: flex;
+      justify-content: space-between;
+      > button {
+        transition: all 0.3s ease;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        height: 60px;
+        width: 100%;
+        display: flex;
+        column-gap: 16px;
+        align-items: center;
+        padding: 0px 30px;
+        justify-content: center;
+        h5 {
+          @include header-sans(22px, 140%);
+          color: $caption-label-text;
+        }
+        div {
+          display: flex;
+          padding: 5px 10px;
+          align-items: center;
+          border-radius: 20px;
+          background: $background---secondary;
+          @include text-space(16px, 140%);
+        }
+      }
+    }
+    @media screen and (max-width: $tablet-width) {
+      .container {
+        > button {
+          width: 100%;
+          h5 {
+            @include header-sans(16px, 140%);
+          }
+          div {
+            @include text-space(12px, 110%);
+          }
+        }
+      }
+    }
+    @media screen and (max-width: $mobile-width) {
+      .container {
+        > button {
+          padding: 0px 10px;
+          width: 100%;
+          div {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .footer {
+    border-top: 2px solid $background !important;
+  }
+}

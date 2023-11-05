@@ -91,6 +91,7 @@ app.post("/api/nfts", (req, res) => {
     }));
 
     res.status(200).json({
+      totalCount: nfts.length,
       hasMore: endIndex < filteredNFTS.length,
       nfts: nftsSlice,
     });
