@@ -36,6 +36,7 @@ btnClick(createdBtn);
 
 //API part:
 const API_BASE_URL = "http://localhost:3000/api/creators";
+const NOT_FOUND_URL = "http://127.0.0.1:5500/client/pages/not-found/index.html";
 let searchParams = new URLSearchParams(window.location.search);
 let artistId = searchParams.get("artist_id");
 
@@ -46,7 +47,12 @@ function getData() {
   loadingElement.style.display = "initial";
   artistPageBody.style.overflow = "hidden";
   fetch(`${API_BASE_URL}/${artistId}`)
-    .then((res) => res.json())
+    .then((res) => {
+      if (res.status === 404) {
+        window.location.href = NOT_FOUND_URL;
+      }
+      return res.json();
+    })
     .then((data) => {
       let artistData = data;
       fillArtistPage(artistData);
