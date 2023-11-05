@@ -83,12 +83,7 @@ function fillArtistPage(artist) {
   document
     .querySelector(".artist__right__copy-btn")
     .addEventListener("click", () => {
-      const textarea = document.createElement("textarea");
-      textarea.value = artist.chainId;
-      document.body.appendChild(textarea);
-      textarea.select();
-      document.execCommand("copy");
-      document.body.removeChild(textarea);
+      navigator.clipboard.writeText(artist.chainId);
       Toastify({
         text: "Chain ID copied to clipboard!",
         duration: 3000,
