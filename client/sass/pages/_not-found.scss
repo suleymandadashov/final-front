@@ -1,0 +1,28 @@
+#Not-found {
+  background-color: $background;
+  text-align: center;
+  padding-top: 60px;
+
+  img {
+    width: 200px;
+    margin-bottom: -50px;
+  }
+  h1 {
+    @include header-space(60px, 140%);
+    margin-bottom: 20px;
+  }
+
+  p {
+    color: $caption-label-text;
+    font-size: 1.2em;
+  }
+
+  a {
+    color: $call-to-action;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}

@@ -2638,6 +2638,37 @@
   }
 }
 
+#Not-found {
+  background-color: #2b2b2b;
+  text-align: center;
+  padding-top: 60px;
+}
+#Not-found img {
+  width: 200px;
+  margin-bottom: -50px;
+}
+#Not-found h1 {
+  color: #fff;
+  font-family: "Space Mono";
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+#Not-found p {
+  color: #858584;
+  font-size: 1.2em;
+}
+#Not-found a {
+  color: #a259ff;
+  text-decoration: none;
+}
+#Not-found a:hover {
+  text-decoration: underline;
+}
+
 #Create-account {
   background-color: #2b2b2b;
 }
