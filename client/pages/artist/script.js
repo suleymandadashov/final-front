@@ -39,8 +39,12 @@ const API_BASE_URL = "http://localhost:3000/api/creators";
 let searchParams = new URLSearchParams(window.location.search);
 let artistId = searchParams.get("artist_id");
 
+const loadingElement = document.querySelector(".loader-container");
+const artistPageBody = document.querySelector("#Artist");
+
 function getData() {
-  // loadingElement.style.display = "flex";
+  loadingElement.style.display = "initial";
+  artistPageBody.style.overflow = "hidden";
   fetch(`${API_BASE_URL}/${artistId}`)
     .then((res) => res.json())
     .then((data) => {
@@ -48,7 +52,8 @@ function getData() {
       fillArtistPage(artistData);
     })
     .finally(() => {
-      // loadingElement.style.display = "none";
+      loadingElement.style.display = "none";
+      artistPageBody.style.overflow = "auto";
     });
 }
 

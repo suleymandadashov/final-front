@@ -1,4 +1,5 @@
 const form = document.getElementById("registration-form");
+const createBtn = document.querySelector("#registration-form button");
 
 form.addEventListener("submit", function (event) {
   let valid = true;
@@ -75,6 +76,7 @@ form.addEventListener("submit", function (event) {
 
   if (valid) {
     newUsername = username.value;
+    createBtn.disabled = true;
     fetch("http://localhost:3000/api/register", {
       method: "POST",
       headers: {
@@ -118,6 +120,9 @@ form.addEventListener("submit", function (event) {
             },
           }).showToast();
         }
+      })
+      .finally(() => {
+        createBtn.disabled = false;
       });
   }
 });

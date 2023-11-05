@@ -59,6 +59,11 @@
           border: none;
           @include header-sans(16px, 140%);
           text-transform: none;
+          &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none; //disables the transitions
+          }
         }
         .error-message {
           height: 20px;

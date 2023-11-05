@@ -1,4 +1,5 @@
 const form = document.getElementById("login-form");
+const loginBtn = document.querySelector("#login-form button");
 
 form.addEventListener("submit", function (event) {
   let valid = true;
@@ -25,6 +26,7 @@ form.addEventListener("submit", function (event) {
 
   if (valid) {
     newUsername = username.value;
+    loginBtn.disabled = true;
     fetch("http://localhost:3000/api/login", {
       method: "POST",
       headers: {
@@ -65,6 +67,9 @@ form.addEventListener("submit", function (event) {
             },
           }).showToast();
         }
+      })
+      .finally(() => {
+        loginBtn.disabled = false;
       });
   }
 });
