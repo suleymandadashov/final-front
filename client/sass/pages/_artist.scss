@@ -831,6 +831,11 @@
           height: 295px;
         }
       }
+      &__empty {
+        h2 {
+          font-size: 22px;
+        }
+      }
     }
     @media screen and (max-width: $mobile-width) {
       .container {
