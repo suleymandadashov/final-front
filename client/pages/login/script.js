@@ -25,7 +25,7 @@ form.addEventListener("submit", function (event) {
   }
 
   if (valid) {
-    newUsername = username.value;
+    newUsername = username.value.trim();
     loginBtn.disabled = true;
     fetch("http://localhost:3000/api/login", {
       method: "POST",
@@ -33,8 +33,8 @@ form.addEventListener("submit", function (event) {
         "CONTENT-TYPE": "application/json",
       },
       body: JSON.stringify({
-        username: username.value,
-        password: password.value,
+        username: username.value.trim(),
+        password: password.value.trim(),
       }),
     })
       .then((response) => {

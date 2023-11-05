@@ -27,7 +27,7 @@ form.addEventListener("submit", function (event) {
   // At least one special character, (?=.*?[#?!@$%^&*-])
   // Minimum eight in length .{8,} (with the anchors)
 
-  if (username.value == "") {
+  if (username.value.trim() == "") {
     valid = false;
     document.querySelector(".username.error-message").textContent =
       "*Required field";
@@ -39,7 +39,7 @@ form.addEventListener("submit", function (event) {
     document.querySelector(".username.error-message").textContent = "";
   }
 
-  if (email.value == "") {
+  if (email.value.trim() == "") {
     valid = false;
     document.querySelector(".email.error-message").textContent =
       "*Required field";
@@ -75,7 +75,7 @@ form.addEventListener("submit", function (event) {
   event.preventDefault();
 
   if (valid) {
-    newUsername = username.value;
+    newUsername = username.value.trim();
     createBtn.disabled = true;
     fetch("http://localhost:3000/api/register", {
       method: "POST",
@@ -83,8 +83,8 @@ form.addEventListener("submit", function (event) {
         "CONTENT-TYPE": "application/json",
       },
       body: JSON.stringify({
-        username: username.value,
-        email: email.value,
+        username: username.value.trim(),
+        email: email.value.trim(),
         password: password.value,
       }),
     })
