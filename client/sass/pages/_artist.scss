@@ -531,13 +531,9 @@
   .artist {
     padding-top: 90px;
     padding-bottom: 40px;
-    .container {
-      display: flex;
-      column-gap: 100px;
-    }
     &__left {
       position: relative;
-      width: 599px;
+      width: 100%;
       display: flex;
       flex-direction: column;
       row-gap: 30px;
@@ -561,6 +557,7 @@
         }
       }
       &__bio {
+        width: 599px;
         h5 {
           @include header-space(22px, 160%);
           color: $caption-label-text;
@@ -595,28 +592,32 @@
         border-radius: 20px;
         border: 2px solid var(--Background, #2b2b2b);
       }
-    }
-    &__right {
-      display: flex;
-      column-gap: 20px;
-      &__copy-btn {
-        border: none;
-        width: 186px;
-        @include secondary-btn-colored();
+      &__btns {
+        display: flex;
+        column-gap: 20px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        &__copy-btn {
+          border: none;
+          width: 186px;
+          @include secondary-btn-colored();
+          p {
+            width: 113px;
+          }
+        }
+        &__follow-btn {
+          @include secondary-btn-transparent();
+        }
         p {
-          width: 113px;
+          @include header-sans(16px, 140%);
+        }
+        .following {
+          @include secondary-btn-colored();
         }
       }
-      &__follow-btn {
-        @include secondary-btn-transparent();
-      }
-      p {
-        @include header-sans(16px, 140%);
-      }
-      .following {
-        @include secondary-btn-colored();
-      }
     }
+
     @media screen and (max-width: $tablet-width) {
       padding-top: 80px;
       padding-bottom: 30px;
@@ -626,7 +627,9 @@
         h2 {
           @include header-sans(38px, 120%);
         }
-
+        &__btns {
+          position: initial;
+        }
         &__stats {
           div {
             width: 156.667px;
@@ -639,6 +642,7 @@
           }
         }
         &__bio {
+          width: 100%;
           h5 {
             @include header-space(16px, 140%);
           }
@@ -667,7 +671,7 @@
         h2 {
           @include header-sans(28px, 140%);
         }
-        > .artist__right {
+        &__btns {
           display: flex;
           flex-direction: column;
           row-gap: 20px;

@@ -80,13 +80,15 @@ function fillArtistPage(artist) {
   const firstFourChars = artist.chainId.slice(0, 4);
   const lastFourChars = artist.chainId.slice(-4);
   const shortenedChainId = `${firstFourChars}...${lastFourChars}`;
-  document.querySelectorAll(".artist__right__copy-btn p").forEach((button) => {
-    button.textContent = shortenedChainId;
-  });
+  document
+    .querySelectorAll(".artist__left__btns__copy-btn p")
+    .forEach((button) => {
+      button.textContent = shortenedChainId;
+    });
 
   //Copying to the clipboard
   document
-    .querySelector(".artist__right__copy-btn")
+    .querySelector(".artist__left__btns__copy-btn")
     .addEventListener("click", () => {
       navigator.clipboard.writeText(artist.chainId);
       Toastify({
@@ -158,9 +160,13 @@ function formatNumberInThousands(numberStr) {
 }
 
 //Follow btn using local storage
-const followBtn = document.querySelector(".artist__right__follow-btn");
-const followBtnText = document.querySelector(".artist__right__follow-btn p");
-const followBtnImg = document.querySelector(".artist__right__follow-btn img");
+const followBtn = document.querySelector(".artist__left__btns__follow-btn");
+const followBtnText = document.querySelector(
+  ".artist__left__btns__follow-btn p"
+);
+const followBtnImg = document.querySelector(
+  ".artist__left__btns__follow-btn img"
+);
 
 const isFollowed =
   JSON.parse(localStorage.getItem(`followed_${artistId}`)) || false;
@@ -183,21 +189,3 @@ function updateButtonColor(isFollowed) {
     followBtnImg.src = "../../media/icons/plus.svg";
   }
 }
-
-//To change the directory of 2 buttons in desktok and tablet/mobile modes:
-const artistLeftContainer = document.querySelector(".artist__left");
-const artistRightContainer = document.querySelector(".artist__right");
-const artistContainer = document.querySelector(".artist .container");
-const artistStats = document.querySelector(".artist__left__stats");
-
-function changeElementOrder() {
-  const screenWidth = window.outerWidth;
-  if (screenWidth >= 1050) {
-    artistContainer.appendChild(artistRightContainer);
-  } else {
-    artistLeftContainer.insertBefore(artistRightContainer, artistStats);
-  }
-}
-
-changeElementOrder();
-window.addEventListener("resize", changeElementOrder);
