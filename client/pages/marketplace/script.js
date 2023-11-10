@@ -114,5 +114,4 @@ collectionBtn.addEventListener("click", () => {
   document.querySelector(".loader-container").style.display = "none";
   window.removeEventListener("scroll", handleScroll);
 });
-
 btnClick(nftsBtn);
