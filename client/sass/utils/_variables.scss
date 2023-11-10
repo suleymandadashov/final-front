@@ -8,5 +8,9 @@ $call-to-action: #a259ff;
 $gradient-2: linear-gradient(128deg, #a259ff 49.75%, #377df7 136.56%);
 $gradient-1: linear-gradient(101deg, #a259ff 13.57%, #ff6250 97.65%);
 
-$tablet-width: 1050px;
-$mobile-width: 690px;
+$tablet-width: 1067px;
+$mobile-width: 707px;
+
+//horizontal scrollbar vertical scrollbar a gore yaranir,
+//qirilma noqtesinin uzerine scrollbarin width ini (18px) gelende
+//problem aradan qaldirilir

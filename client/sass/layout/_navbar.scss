@@ -23,10 +23,10 @@
     display: flex;
     column-gap: 10px;
     align-items: center;
-    button {
+    a {
+      text-decoration: none;
       background-color: transparent;
       border: none;
-      height: 46px;
       padding: 0px 20px;
       @include header-sans(16px, 140%);
       text-transform: none;
@@ -36,7 +36,7 @@
         cursor: pointer;
       }
     }
-    a {
+    a:last-child {
       @include secondary-btn-colored;
       padding: 0px 30px;
       p {

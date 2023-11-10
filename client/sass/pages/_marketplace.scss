@@ -29,6 +29,39 @@
       justify-content: space-between;
       input {
         width: 100%;
+        background-color: transparent;
+        border: none;
+        @include text-sans(16px, 140%);
+        color: $text;
+        &::placeholder {
+          @include text-sans(16px, 140%);
+          color: $caption-label-text;
+        }
+        &:focus,
+        &:active {
+          outline: none;
+        }
+      }
+    }
+    @media (max-width: $tablet-width) {
+      padding-top: 60px;
+      padding-bottom: 60px;
+      &__header {
+        h2 {
+          @include header-sans(38px, 120%);
+        }
+        p {
+          @include text-sans(16px, 140%);
+        }
+      }
+    }
+    @media (max-width: $mobile-width) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      &__header {
+        h2 {
+          @include header-sans(28px, 140%);
+        }
       }
     }
   }
@@ -96,6 +129,189 @@
       }
     }
   }
+
+  .nft-container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    @media (max-width: $mobile-width) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 30px;
+      @media (max-width: $tablet-width) {
+        grid-template-columns: 1fr 1fr;
+      }
+      @media (max-width: $mobile-width) {
+        grid-template-columns: 1fr;
+      }
+    }
+    &__nft {
+      @include primary-transition();
+      display: flex;
+      flex-direction: column;
+      background-color: $background---secondary;
+      border-radius: 20px;
+      width: 330px;
+      > img {
+        height: 296px;
+        object-fit: cover;
+        border-radius: 20px 20px 0px 0px;
+      }
+      &__text {
+        padding: 20px 30px 25px 30px;
+        h5 {
+          @include header-sans(22px, 140%);
+          margin-bottom: 5px;
+        }
+        &__artist {
+          display: flex;
+          column-gap: 12px;
+          align-items: center;
+          margin-bottom: 25px;
+          img {
+            width: 24px;
+            height: 24px;
+            border-radius: 120px;
+            display: inline-block;
+          }
+          span {
+            @include text-space(16px, 140%);
+          }
+        }
+        &__details {
+          display: flex;
+          justify-content: space-between;
+          h5 {
+            @include text-space(12px, 110%);
+            margin-bottom: 8px;
+            color: $caption-label-text;
+          }
+          p {
+            @include text-space(16px, 140%);
+          }
+          &__bid {
+            text-align: right;
+          }
+        }
+      }
+    }
+    &__empty {
+      display: none;
+      h2 {
+        text-align: center;
+        @include text-space(30px, 120%);
+        color: $caption-label-text;
+        @media (max-width: $tablet-width) {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+
+  .loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 40px;
+    .loader {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80px;
+      height: 80px;
+      position: relative;
+    }
+
+    .loader:before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border-radius: 50%;
+    }
+
+    .loader-inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .loader-block {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 2px;
+      background-color: #fff;
+      box-shadow: 0 0 20px #fff;
+      animation: loader_562 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    }
+
+    .loader-block:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .loader-block:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .loader-block:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .loader-block:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+
+    .loader-block:nth-child(5) {
+      animation-delay: 0.5s;
+    }
+
+    .loader-block:nth-child(6) {
+      animation-delay: 0.6s;
+    }
+
+    .loader-block:nth-child(7) {
+      animation-delay: 0.7s;
+    }
+
+    .loader-block:nth-child(8) {
+      animation-delay: 0.8s;
+    }
+
+    @keyframes loader_562 {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+      }
+
+      20% {
+        transform: scale(1, 2.5);
+        box-shadow: 0 0 50px rgba(255, 255, 255, 0.7);
+      }
+
+      40% {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+
+  .clicked-on {
+    border-bottom: 2px solid $caption-label-text !important;
+    h5 {
+      color: $text !important;
+    }
+    div {
+      background: $caption-label-text !important;
+    }
+  }
+
   .footer {
     border-top: 2px solid $background !important;
   }
