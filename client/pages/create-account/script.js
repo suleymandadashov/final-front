@@ -77,7 +77,7 @@ form.addEventListener("submit", function (event) {
   if (valid) {
     newUsername = username.value.trim();
     createBtn.disabled = true;
-    fetch("https://final-nft-marketplace.up.railway.app/api/register", {
+    fetch("https://final-backend-aynur.up.railway.app/api/register", {
       method: "POST",
       headers: {
         "CONTENT-TYPE": "application/json",

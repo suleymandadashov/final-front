@@ -29,8 +29,7 @@ setInterval(updateTimer, 1000);
 
 //API part:
 
-const API_BASE_URL =
-  "https://final-nft-marketplace.up.railway.app/api/creators";
+const API_BASE_URL = "https://final-backend-aynur.up.railway.app/api/creators";
 const artistsContainer = document.querySelector(".top-artists__artists");
 const loadingElement = document.querySelector(".loader");
 loadingElement.style.display = "none";
@@ -51,10 +50,7 @@ function getData() {
           artist.id - 1
         ];
         newArtist.addEventListener("click", () => {
-          window.open(
-            `http://127.0.0.1:5500/client/pages/artist/index.html?artist_id=${artist.id}`,
-            "_self"
-          );
+          window.open(`../artist/index.html?artist_id=${artist.id}`, "_self");
         });
       });
     })
@@ -117,6 +113,6 @@ document
   .querySelector(".NFT-info__left__artist")
   .addEventListener("click", () => {
     const artistId = 7;
-    const url = `http://127.0.0.1:5500/client/pages/artist/index.html?artist_id=${artistId}`;
+    const url = `../artist/index.html?artist_id=${artistId}`;
     window.open(url, "_self");
   });
