@@ -1,6 +1,6 @@
 //For Timer
-//November 8, 2023, at 00:00:00
-var date = new Date(Date.UTC(2023, 10, 8, 0, 0, 0));
+//November 20, 2023, at 00:00:00
+var date = new Date(Date.UTC(2023, 10, 20, 0, 0, 0));
 date.setHours(date.getHours() - 4); //GMT+4
 
 function updateTimer() {

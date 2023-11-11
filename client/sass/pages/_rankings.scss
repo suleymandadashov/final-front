@@ -1,0 +1,32 @@
+#Rankings {
+  background-color: $background;
+  .header {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    h2 {
+      @include header-sans(51px, 110%);
+      margin-bottom: 20px;
+    }
+    p {
+      @include text-sans(22px, 160%);
+    }
+    @media (max-width: $tablet-width) {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      h2 {
+        @include header-sans(38px, 120%);
+      }
+      p {
+        @include text-sans(16px, 140%);
+      }
+    }
+    @media (max-width: $mobile-width) {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      h2 {
+        @include header-sans(28px, 140%);
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

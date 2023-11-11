@@ -3,7 +3,7 @@ const totalNFTCount = document.getElementById("total-nft-count");
 const nftContainer = document.getElementById("container");
 const loader = document.getElementById("loader");
 
-let pageSize = 3;
+let pageSize = 6;
 let skip = 0;
 
 function showLoader() {

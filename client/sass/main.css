@@ -214,6 +214,10 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .footer__top__left {
   width: 327.414px;
@@ -5166,4 +5170,69 @@
 }
 #Marketplace .footer {
   border-top: 2px solid #2b2b2b !important;
+}
+
+#Rankings {
+  background-color: #2b2b2b;
+}
+#Rankings .header {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+#Rankings .header h2 {
+  color: #fff;
+  font-family: "Work Sans";
+  font-size: 51px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+#Rankings .header p {
+  color: #fff;
+  font-family: "Work Sans";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+}
+@media (max-width: 1067px) {
+  #Rankings .header {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  #Rankings .header h2 {
+    color: #fff;
+    font-family: "Work Sans";
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    text-transform: capitalize;
+  }
+  #Rankings .header p {
+    color: #fff;
+    font-family: "Work Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+  }
+}
+@media (max-width: 707px) {
+  #Rankings .header {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  #Rankings .header h2 {
+    color: #fff;
+    font-family: "Work Sans";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+  }
 }
