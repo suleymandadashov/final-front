@@ -27,7 +27,7 @@ form.addEventListener("submit", function (event) {
   if (valid) {
     newUsername = username.value.trim();
     loginBtn.disabled = true;
-    fetch("http://localhost:3000/api/login", {
+    fetch("https://final-nft-marketplace.up.railway.app/api/login", {
       method: "POST",
       headers: {
         "CONTENT-TYPE": "application/json",

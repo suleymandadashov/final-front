@@ -1,4 +1,4 @@
-const NFT_API_URL = "http://localhost:3000/api/nfts";
+const NFT_API_URL = "https://final-nft-marketplace.up.railway.app/api/nfts";
 const totalNFTCount = document.getElementById("total-nft-count");
 const nftContainer = document.getElementById("container");
 const loader = document.getElementById("loader");
