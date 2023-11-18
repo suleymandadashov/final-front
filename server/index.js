@@ -84,11 +84,14 @@ app.post("/api/nfts", (req, res) => {
         ? nft.name.toLowerCase().includes(searchStr.toLowerCase())
         : true
     );
-    const nftsSlice = filteredNFTS.slice(startIndex, endIndex).map((nft) => ({
-      ...nft,
-      creator: creators.find((c) => c.id == nft.creatorId),
-      creatorId: undefined,
-    }));
+    const nftsSlice = filteredNFTS
+      .map((nft) => ({
+        ...nft,
+        creator: creators.find((c) => c.id == nft.creatorId),
+        creatorId: undefined,
+      }))
+      .filter((nft) => nft.creator)
+      .slice(startIndex, endIndex);
 
     res.status(200).json({
       totalCount: nfts.length,
